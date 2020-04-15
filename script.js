@@ -60,3 +60,52 @@ function whatShallIWear(temp){
 whatShallIWear(80);
 whatShallIWear(63);
 whatShallIWear(50);
+
+//What arguments can you pass to a function?
+
+//You define a function with parameters but call it with an argument.  You'll define your function once but likely call it with many different arguments.
+
+function doIt(param){
+    param = 2;
+}
+var test = 1;
+doIt(test);
+console.log(test);
+
+//JS passes arguments to a function using pass-by-value.  That means each argument is copied into the parameter variable.
+
+//Step 1:  declare a variable age, and initialize it to the value of 7.
+
+var age = 7;
+
+//step 2:  declare a function addOne, with a parameter named x, that adds 1 to the value of x.
+
+function addOne(x){
+    x = x + 1;
+}
+
+//step 3: call the function addOne, pass it the variable age as the argument.  The value in age is copied into the parameter x.
+addOne(age);
+
+//step 4: now the value of x is incremented by one.  remember x is a copy, so only x is incremented, not age.
+
+//Experiments:
+//What happens when we don't pass enough arguments?
+function makeTea(cups, tea){
+    console.log("Brewing " + cups + " cups of " + tea);
+}
+makeTea(3);
+//console shows "Brewing 3 cups of undefined"
+
+//what happens when we pass too many arguments?
+makeTea(3, "Earl Grey", "hey ma!", 42);
+//console shows "Brewing 3 cups of Earl Grey", so it ignored the extra.
+
+//what happens when we have no parameters?
+function barkAtTheMoon(){
+    console.log("Wooooooooooooo!");
+}
+barkAtTheMoon();
+//Console shows, "Woooooooooo!"
+
+
